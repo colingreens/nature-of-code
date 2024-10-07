@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Nature Of Code"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="res://scenes/Randomness.tscn"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
 
 [dotnet]
 

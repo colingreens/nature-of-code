@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6e5jvsno5h6h"]
+
+[ext_resource type="Script" path="res://scripts/Randomness/RandomWalker.cs" id="1_ycqki"]
+[ext_resource type="Script" path="res://scripts/Randomness/NormalDistribution.cs" id="2_x4vir"]
+
+[node name="Randomness" type="Node"]
+
+[node name="RandomWalker" type="Node2D" parent="."]
+visible = false
+script = ExtResource("1_ycqki")
+
+[node name="NormalDistribution" type="Node2D" parent="."]
+script = ExtResource("2_x4vir")
