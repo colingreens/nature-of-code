@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=4 uid="uid://d0xdodm6gmxik"]
+[gd_scene load_steps=8 format=4 uid="uid://d0xdodm6gmxik"]
 
+[ext_resource type="Script" path="res://scenes/BeeScene/BeeScene.cs" id="1_27d2x"]
 [ext_resource type="Texture2D" uid="uid://cfxhrs4h670yx" path="res://assets/clouds/1.png" id="1_ghwt2"]
 [ext_resource type="TileSet" uid="uid://c8laoup7k7hro" path="res://resources/environment.tres" id="2_mjbh1"]
 [ext_resource type="Texture2D" uid="uid://bfkht74uh0fbc" path="res://assets/bee-export.png" id="3_toxfl"]
+[ext_resource type="Script" path="res://scenes/BeeScene/Bee.cs" id="3_xe1ee"]
+[ext_resource type="Script" path="res://scenes/BeeScene/Flower.cs" id="5_gj6ue"]
+[ext_resource type="Texture2D" uid="uid://ujp86wha381i" path="res://assets/flowers/flower.png" id="6_opci5"]
 
 [node name="BeeScene" type="Node"]
+script = ExtResource("1_27d2x")
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -19,14 +24,23 @@ texture = ExtResource("1_ghwt2")
 tile_map_data = PackedByteArray("AAAAABMAAQAAAAAAAAABABMAAQACAAAAAAACABMAAQAEAAAAAAADABMAAQADAAAAAAAEABMAAQACAAAAAAAFABMAAQACAAAAAAAGABMAAQAEAAAAAAAHABMAAQACAAAAAAAIABMAAQACAAAAAAAJABMAAQAEAAAAAAAKABMAAQAFAAAAAAA=")
 tile_set = ExtResource("2_mjbh1")
 
-[node name="Flowers" type="TileMapLayer" parent="Environment"]
-tile_map_data = PackedByteArray("AAAIABIABAAAAAAAAAAJABIABAAAAAEAAAAHABIABAAAAAIAAAAKABIABAAAAAMAAAAGABIABAAAAAYAAAAFABIABAAAAAUAAAAEABIABAAAAAQAAAA=")
-tile_set = ExtResource("2_mjbh1")
-
 [node name="Bees" type="Node2D" parent="."]
 
-[node name="Bee" type="Node2D" parent="Bees"]
+[node name="Bee" type="Node2D" parent="Bees" node_paths=PackedStringArray("scene")]
 position = Vector2(320, 896)
+script = ExtResource("3_xe1ee")
+scene = NodePath("../..")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bees/Bee"]
 texture = ExtResource("3_toxfl")
+
+[node name="Flowers" type="Node2D" parent="."]
+
+[node name="Flower" type="Node2D" parent="Flowers" node_paths=PackedStringArray("scene")]
+position = Vector2(482, 1175)
+script = ExtResource("5_gj6ue")
+scene = NodePath("../..")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flowers/Flower"]
+scale = Vector2(2, 2)
+texture = ExtResource("6_opci5")
