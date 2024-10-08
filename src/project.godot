@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Nature Of Code"
-run/main_scene="res://scenes/Randomness.tscn"
+run/main_scene="res://scenes/BeeScene/BeeScene.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
+window/size/window_width_override=1080
+window/size/window_height_override=1920
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
 
 [dotnet]
 
@@ -27,5 +31,8 @@ project/assembly_name="Nature Of Code"
 [file_customization]
 
 folder_colors={
+"res://assets/": "green",
+"res://resources/": "red",
+"res://scenes/": "blue",
 "res://scripts/": "yellow"
 }

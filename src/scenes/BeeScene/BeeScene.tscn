@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=4 uid="uid://d0xdodm6gmxik"]
+
+[ext_resource type="Texture2D" uid="uid://cfxhrs4h670yx" path="res://assets/clouds/1.png" id="1_ghwt2"]
+[ext_resource type="TileSet" uid="uid://c8laoup7k7hro" path="res://resources/environment.tres" id="2_mjbh1"]
+[ext_resource type="Texture2D" uid="uid://bfkht74uh0fbc" path="res://assets/bee-export.png" id="3_toxfl"]
+
+[node name="BeeScene" type="Node"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(368, 640)
+scale = Vector2(1.27778, 3.95062)
+texture = ExtResource("1_ghwt2")
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Ground" type="TileMapLayer" parent="Environment"]
+tile_map_data = PackedByteArray("AAAAABMAAQAAAAAAAAABABMAAQACAAAAAAACABMAAQAEAAAAAAADABMAAQADAAAAAAAEABMAAQACAAAAAAAFABMAAQACAAAAAAAGABMAAQAEAAAAAAAHABMAAQACAAAAAAAIABMAAQACAAAAAAAJABMAAQAEAAAAAAAKABMAAQAFAAAAAAA=")
+tile_set = ExtResource("2_mjbh1")
+
+[node name="Flowers" type="TileMapLayer" parent="Environment"]
+tile_map_data = PackedByteArray("AAAIABIABAAAAAAAAAAJABIABAAAAAEAAAAHABIABAAAAAIAAAAKABIABAAAAAMAAAAGABIABAAAAAYAAAAFABIABAAAAAUAAAAEABIABAAAAAQAAAA=")
+tile_set = ExtResource("2_mjbh1")
+
+[node name="Bees" type="Node2D" parent="."]
+
+[node name="Bee" type="Node2D" parent="Bees"]
+position = Vector2(320, 896)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bees/Bee"]
+texture = ExtResource("3_toxfl")
